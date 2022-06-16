@@ -19,4 +19,4 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatIconModule,
   ]
 })
-export class AngularMaterialModule { }
+export class MaterialModule { }

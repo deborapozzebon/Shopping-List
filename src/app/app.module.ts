@@ -5,17 +5,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { AngularMaterialModule } from './shared/angularMaterial.module';
+import { MaterialModule } from './core/material.module';
+import { ShoppingListModule } from './features/shoppingList/shoppingList.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     CoreModule,
+    SharedModule,
+    ShoppingListModule,
     BrowserModule,
     AppRoutingModule,
-    AngularMaterialModule,
+    MaterialModule,
     BrowserAnimationsModule
   ],
   providers: [],

@@ -1,25 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { AngularMaterialModule } from '../shared/angularMaterial.module';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
   declarations: [
     ToolbarComponent
   ],
   imports: [
-    AngularMaterialModule,
     CommonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
+    MaterialModule
   ],
   exports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    ToolbarComponent
+    CommonModule,
+    ToolbarComponent,
   ]
 })
+
 export class CoreModule { }
