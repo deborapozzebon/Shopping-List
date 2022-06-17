@@ -1,1 +1,57 @@
-<p>home works!</p>
+<section>
+  <h2>Adicione itens a lista de compras</h2>
+  <form class="inserir-produto" [formGroup]="insertProduct">
+    <mat-form-field class="produto" appearance="fill">
+      <mat-label>Produto</mat-label>
+      <input matInput placeholder="Ex. Água" formControlName="product">
+    </mat-form-field>
+
+    <button mat-mini-fab color="primary" aria-label="Adicionar item a lista" (click)="onAddProduct()">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
+  </form>
+
+  <div class="example-container">
+    <h2>Lista de produto</h2>
+  
+    <div
+      cdkDropList
+      #listList="cdkDropList"
+      [cdkDropListData]="list"
+      [cdkDropListConnectedTo]="[market1List, market2List]"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="example-box" *ngFor="let item of list" cdkDrag>{{item}}</div>
+    </div>
+  </div>
+
+  <div class="mercados">
+    <div class="example-container">
+      <h2>Mercado 1</h2>
+    
+      <div
+        cdkDropList
+        #market1List="cdkDropList"
+        [cdkDropListData]="market1"
+        [cdkDropListConnectedTo]="[market2List, listList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of market1" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+    
+    <div class="example-container">
+      <h2>Mercado 2</h2>
+    
+      <div
+        cdkDropList
+        #market2List="cdkDropList"
+        [cdkDropListData]="market2"
+        [cdkDropListConnectedTo]="[market1List, listList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of market2" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  </div>
+</section>
